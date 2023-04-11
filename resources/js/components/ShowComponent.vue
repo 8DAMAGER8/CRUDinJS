@@ -4,7 +4,7 @@
         <td>{{ person.name }}</td>
         <td>{{ person.age }}</td>
         <td>{{ person.job }}</td>
-        <td><a href="#" @click.prevent="changeEdipPersonId(person.id, person.name, person.age, person.job)"
+        <td><a href="#" @click.prevent="changeEditPersonId(person.id, person.name, person.age, person.job)"
                class="btn btn-success">Edit</a></td>
         <td><a href="#" @click.prevent="deletePerson(person.id)" class="btn btn-danger">Delete</a></td>
     </tr>
@@ -26,8 +26,8 @@ export default {
     props: [
         'person'
     ],
-    methods: {
 
+    methods: {
         deletePerson(id) {
             this.editPersonId = null
             axios.delete(`/api/people/${id}`)
@@ -36,7 +36,7 @@ export default {
                 })
         },
 
-        changeEdipPersonId(id, name, age, job) {
+        changeEditPersonId(id, name, age, job) {
             this.$parent.editPersonId = id
             let editName = `edit_${id}`
             let fullEditName = this.$parent.$refs[editName][0];

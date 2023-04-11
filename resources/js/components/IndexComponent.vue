@@ -70,7 +70,7 @@ export default {
                 })
         },
 
-        changeEdipPersonId(id, name, age, job) {
+        changeEditPersonId(id, name, age, job) {
             this.editPersonId = id
             let editName = `edit_${id}`
             let fullEditName = this.$refs[editName][0];
