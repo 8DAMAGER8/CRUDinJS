@@ -6,6 +6,7 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
+import router from "./router";
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
@@ -15,9 +16,6 @@ import { createApp } from 'vue';
 
 import('axios');
 const app = createApp({});
-
-import PostComponent from './components/PostComponent.vue';
-app.component('example-component', PostComponent);
 
 /**
  * The following block of code may be used to automatically register your
